@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Web Confusion</title>
+<link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
+      href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+<link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
+      href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+<link rel="stylesheet" href="css/activity.css">
+<link rel="stylesheet" href="theme/monokai.css">
+<link rel="stylesheet" href="lib/codemirror.css">
+
+<script src="javascript/main.js"></script>
+<script src="lib/codemirror.js"></script>
+</head>
+
+<body>
+
+<!-- The content of your activity goes inside the canvas -->
+<div id="canvas">
+
+  <!-- Replace this message with your own content -->
+  
+  <div class="code">
+    <a href="#" id="button-side-menu"onclick="sidemenu()">Open</a>
+  <div id="side-menu">
+    <h2 align="center" style="color:#fff;">Choose Your ViewPort<a href="#" onclick="closesidemenu()">X</a></h2>
+    <a href=""><li>1</li></a>
+    <a href=""><li>2</li></a>
+    <a href=""><li>3</li></a>
+    <a href=""><li>4</li></a>
+  </div>
+
+    <div class="html">
+      <div class="cheads">HTML</div>
+      <div class="textarea">
+        <textarea style="" placeholder="Enter Your HTML Code Here" id="code" name="code">
+        </textarea>
+      </div>
+    </div>
+  
+
+
+    <div class="css">
+      <div class="cheads">CSS</div>
+      <div class="textarea">
+        <textarea style="" placeholder="Enter Your CSS Code Here" id="code1" name="code1">
+        </textarea>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="display">
+    <div class="level" style="z-index:2;">
+      <div class="levhead">Level</div>
+      <div class="levnum">1</div>
+    </div>
+    <h1 align="center">ViewPort</h1>
+      <div class="viewport" style="width:600px;height:300px;background:#000; position:absolute;left:50%;top:21%;z-index:1;color:#fff;"><h2 align="center">This is the viewport</h2>The Size FOr this will be variable</div>      
+      <div class="footer">
+        <ul>
+          <a href=""><li>Run</li></a>
+          <a href=""><li>Debug</li></a>
+        </ul>
+      </div>
+  </div>
+
+</div>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true
+  });
+  var editor = CodeMirror.fromTextArea(document.getElementById("code1"), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true
+  });
+  var choice = document.location.search &&
+               decodeURIComponent(document.location.search.slice(1));
+  if (choice) {
+    input.value = choice;
+    editor.setOption("theme", choice);
+  }
+</script>
+</body>
+
+</html>
